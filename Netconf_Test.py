@@ -7,6 +7,6 @@ m = manager.connect(
     password="C1sco12345",
     hostkey_verify=False
     )
-print("#Supported Capabilities (YANG models):")
-for capability in m.server_capabilities:
-    print(capability)
+
+netconf_reply = m.get_config(source="running")
+print(netconf_reply)
